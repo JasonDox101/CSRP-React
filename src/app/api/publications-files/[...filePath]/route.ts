@@ -1,15 +1,6 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
-const allowedDocumentFiles = new Set([
-  "ARCH_Large-scale_Knowledge_Graph_via_Aggregated_Na.pdf",
-  "DOME.pdf",
-  "Robust automated harmonization of heterogeneous data through ensemble machine learning algorithm development and validation study.pdf",
-  "Representation Learning to Advance Multi-institutional Studies.pdf",
-  "Semi-supervised Triply Robust Inductive.pdf",
-  "Adversarial Drift-Aware Predictive Transfer.pdf",
-]);
-
 const allowedImageFiles = new Set([
   "ARCH_Large.png",
   "DOME.png",
@@ -20,7 +11,6 @@ const allowedImageFiles = new Set([
 ]);
 
 const mimeTypes: Record<string, string> = {
-  ".pdf": "application/pdf",
   ".png": "image/png",
 };
 
@@ -28,9 +18,7 @@ type RouteContext = {
   params: Promise<{ filePath: string[] }>;
 };
 
-export async function GET(request: Request, context: RouteContext) {
-  const requestUrl = new URL(request.url);
-  const shouldDownload = requestUrl.searchParams.get("download") === "1";
+export async function GET(_request: Request, context: RouteContext) {
   const { filePath } = await context.params;
 
   if (!filePath || filePath.length !== 1) {
@@ -48,10 +36,7 @@ export async function GET(request: Request, context: RouteContext) {
     return new Response("Not Found", { status: 404 });
   }
 
-  const isAllowedDocument = allowedDocumentFiles.has(fileName);
-  const isAllowedImage = allowedImageFiles.has(fileName);
-
-  if (!isAllowedDocument && !isAllowedImage) {
+  if (!allowedImageFiles.has(fileName)) {
     return new Response("Not Found", { status: 404 });
   }
 
@@ -61,17 +46,12 @@ export async function GET(request: Request, context: RouteContext) {
     const fileBuffer = await readFile(absolutePath);
     const ext = path.extname(fileName).toLowerCase();
     const contentType = mimeTypes[ext] ?? "application/octet-stream";
-    const contentDisposition = isAllowedDocument
-      ? shouldDownload
-        ? "attachment"
-        : "inline"
-      : "inline";
 
     return new Response(fileBuffer, {
       status: 200,
       headers: {
         "Content-Type": contentType,
-        "Content-Disposition": `${contentDisposition}; filename*=UTF-8''${encodeURIComponent(fileName)}`,
+        "Content-Disposition": `inline; filename*=UTF-8''${encodeURIComponent(fileName)}`,
       },
     });
   } catch {
