@@ -61,8 +61,8 @@ const publications: Publication[] = [
   },
 ];
 
-const toFileLink = (fileName: string) =>
-  `/api/publications-files/${encodeURIComponent(fileName)}`;
+const toImagePath = (fileName: string) =>
+  `/assets/images/publications/${encodeURIComponent(fileName)}`;
 
 export default function PublicationsPage() {
   return (
@@ -99,7 +99,7 @@ export default function PublicationsPage() {
               </div>
               {publication.infographicFileName ? (
                 <Image
-                  src={toFileLink(publication.infographicFileName)}
+                  src={toImagePath(publication.infographicFileName)}
                   width={1200}
                   height={800}
                   className="w-full rounded-lg border border-[var(--harvard-border-gray)]"

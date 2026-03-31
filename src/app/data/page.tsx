@@ -40,11 +40,11 @@ const dataSections = [
 
 export default function DataPage() {
   return (
-    <main className="mx-auto max-w-[1200px] px-6 py-16 md:px-10">
-      <section className="space-y-10">
-        <div className="space-y-4">
+    <main className="mx-auto max-w-[1200px] px-6 py-18 md:px-10">
+      <section className="space-y-12">
+        <div className="space-y-5">
           <div className="h-1 w-16 rounded-full bg-[var(--harvard-primary-blue)]" />
-          <h1 className="text-3xl font-bold tracking-tight text-[var(--harvard-blue)] md:text-4xl">
+          <h1 className="text-4xl font-bold tracking-tight text-[var(--harvard-blue)] md:text-5xl">
             MGB Data
           </h1>
           <p className="text-base text-[var(--harvard-medium-gray)] md:text-lg">
@@ -52,20 +52,20 @@ export default function DataPage() {
           </p>
         </div>
 
-        <ul className="space-y-10">
+        <ul className="space-y-14">
           {dataSections.map((section) => (
-            <li key={section.number} className="flex items-start gap-5">
-              <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[var(--harvard-primary-blue)] text-sm font-bold text-white">
+            <li key={section.number} className="flex items-start gap-6">
+              <span className="mt-0.5 flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[var(--harvard-primary-blue)] text-base font-bold text-white">
                 {section.number}
               </span>
               <div className="flex-1 space-y-4">
-                <h2 className="text-lg font-semibold text-[var(--harvard-blue)] md:text-xl">
+                <h2 className="text-3xl font-semibold text-[var(--harvard-blue)]">
                   {section.title}
                 </h2>
                 {section.paragraphs.map((paragraph) => (
                   <p
                     key={paragraph}
-                    className="text-[15px] leading-relaxed text-[var(--harvard-dark)] md:text-base"
+                    className="text-base leading-8 text-[var(--harvard-dark)] md:text-lg"
                   >
                     {paragraph}
                   </p>
