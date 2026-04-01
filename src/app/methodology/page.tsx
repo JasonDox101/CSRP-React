@@ -1,12 +1,19 @@
 import Image from "next/image";
 
+const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "";
+const basePath =
+  process.env.GITHUB_ACTIONS === "true" && repositoryName.length > 0
+    ? `/${repositoryName}`
+    : "";
+const withBasePath = (path: string) => `${basePath}${path}`;
+
 const methodologySections = [
   {
     number: 1,
     id: "federated-transfer-learning",
     title: "Federated Transfer Learning",
     image: {
-      src: "/assets/images/methodology/federated-transfer-learning.jpg",
+      src: withBasePath("/assets/images/methodology/federated-transfer-learning.jpg"),
       alt: "Federated Transfer Learning",
     },
     content: null,
@@ -16,7 +23,7 @@ const methodologySections = [
     id: "automated-feature-selection",
     title: "Automated Feature Selection",
     image: {
-      src: "/assets/images/methodology/automated-feature-selection.png",
+      src: withBasePath("/assets/images/methodology/automated-feature-selection.png"),
       alt: "Automated Feature Selection",
     },
     content: (

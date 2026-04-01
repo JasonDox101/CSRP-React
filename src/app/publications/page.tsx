@@ -8,6 +8,12 @@ type Publication = {
   infographicFileName?: string;
 };
 
+const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "";
+const basePath =
+  process.env.GITHUB_ACTIONS === "true" && repositoryName.length > 0
+    ? `/${repositoryName}`
+    : "";
+
 const publications: Publication[] = [
   {
     number: 1,
@@ -62,7 +68,7 @@ const publications: Publication[] = [
 ];
 
 const toImagePath = (fileName: string) =>
-  `/assets/images/publications/${encodeURIComponent(fileName)}`;
+  `${basePath}/assets/images/publications/${encodeURIComponent(fileName)}`;
 
 export default function PublicationsPage() {
   return (

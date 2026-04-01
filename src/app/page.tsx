@@ -1,19 +1,26 @@
 import Image from "next/image";
 
+const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "";
+const basePath =
+  process.env.GITHUB_ACTIONS === "true" && repositoryName.length > 0
+    ? `/${repositoryName}`
+    : "";
+const withBasePath = (path: string) => `${basePath}${path}`;
+
 const researchItems = [
   {
     title: "Federated Transfer Learning",
-    image: "/assets/images/applications/federated-transfer-learning.png",
+    image: withBasePath("/assets/images/applications/federated-transfer-learning.png"),
     alt: "Federated Transfer Learning",
   },
   {
     title: "Automated Feature Selection",
-    image: "/assets/images/applications/automated-feature-selection.png",
+    image: withBasePath("/assets/images/applications/automated-feature-selection.png"),
     alt: "Automated Feature Selection",
   },
   {
     title: "Mental Health Knowledge Network",
-    image: "/assets/images/applications/mental-health-knowledge-network.png",
+    image: withBasePath("/assets/images/applications/mental-health-knowledge-network.png"),
     alt: "Mental Health Knowledge Network",
   },
 ];
@@ -47,7 +54,7 @@ export default function Home() {
             Center for Suicide Risk Prevention and Research
           </h2>
           <Image
-            src="/assets/images/csrp/mainchart.png"
+            src={withBasePath("/assets/images/csrp/mainchart.png")}
             width={1400}
             height={780}
             className="w-full rounded-lg border border-[var(--harvard-border-gray)]"

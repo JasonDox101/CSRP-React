@@ -1,5 +1,12 @@
 import Image from "next/image";
 
+const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "";
+const basePath =
+  process.env.GITHUB_ACTIONS === "true" && repositoryName.length > 0
+    ? `/${repositoryName}`
+    : "";
+const withBasePath = (path: string) => `${basePath}${path}`;
+
 const dataSections = [
   {
     number: 1,
@@ -9,11 +16,11 @@ const dataSections = [
     ],
     images: [
       {
-        src: "/assets/images/csrp/data1.png",
+        src: withBasePath("/assets/images/csrp/data1.png"),
         alt: "MGB data demographics",
       },
       {
-        src: "/assets/images/csrp/data2.png",
+        src: withBasePath("/assets/images/csrp/data2.png"),
         alt: "MGB data demographics detail",
       },
     ],
@@ -27,11 +34,11 @@ const dataSections = [
     ],
     images: [
       {
-        src: "/assets/images/csrp/data3.png",
+        src: withBasePath("/assets/images/csrp/data3.png"),
         alt: "MGB mental health codes",
       },
       {
-        src: "/assets/images/csrp/data4.png",
+        src: withBasePath("/assets/images/csrp/data4.png"),
         alt: "MGB mental health codes detail",
       },
     ],

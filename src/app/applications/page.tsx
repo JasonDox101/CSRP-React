@@ -1,12 +1,19 @@
 import Image from "next/image";
 
+const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "";
+const basePath =
+  process.env.GITHUB_ACTIONS === "true" && repositoryName.length > 0
+    ? `/${repositoryName}`
+    : "";
+const withBasePath = (path: string) => `${basePath}${path}`;
+
 const applications = [
   {
     number: 1,
     id: "federated-transfer-learning",
     title: "Federated Transfer Learning",
     image: {
-      src: "/assets/images/applications/federated-transfer-learning.png",
+      src: withBasePath("/assets/images/applications/federated-transfer-learning.png"),
       alt: "Federated Transfer Learning",
     },
     link: "https://shiny.parse-health.org/ARRTLE/",
@@ -16,7 +23,7 @@ const applications = [
     id: "automated-feature-selection",
     title: "Automated Feature Selection",
     image: {
-      src: "/assets/images/applications/automated-feature-selection.png",
+      src: withBasePath("/assets/images/applications/automated-feature-selection.png"),
       alt: "Automated Feature Selection",
     },
     link: "https://app.parse-health.org/ARCH/",
@@ -26,7 +33,7 @@ const applications = [
     id: "mental-health-knowledge-network",
     title: "Mental Health Knowledge Network",
     image: {
-      src: "/assets/images/applications/mental-health-knowledge-network.png",
+      src: withBasePath("/assets/images/applications/mental-health-knowledge-network.png"),
       alt: "Mental Health Knowledge Network",
     },
     link: "https://shiny.parse-health.org/keser-mental-health/",
