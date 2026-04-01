@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:pages": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "preview:out": "npx serve out"
   },
   "dependencies": {
     "next": "16.1.6",
