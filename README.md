@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CSRP Methods Core Website
 
-## Getting Started
+This website presents the work of the CSRP Methods Core, including research goals, data snapshots, methodological innovations, publications, and web tools.  
+It is designed as a structured public-facing site for research communication and resource sharing.
 
-First, run the development server:
+## Website Content Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Home
+The homepage introduces the CSRP Methods Core mission and highlights key research directions.  
+It also provides a quick visual entry point to major project areas.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Specific Aims
+This section summarizes the center’s core objectives:
+- data collection and integration
+- clinical trial and study support
+- novel clinical prediction methodology development
+- dissemination of methods and resources
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### MGB Data
+This page presents exploratory analyses and visual summaries from the MGB data resource, including:
+- cohort demographics
+- mental health code distributions
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Methodology
+This section describes methodological workstreams, including model and knowledge representation frameworks such as:
+- Federated Transfer Learning
+- Automated Feature Selection
 
-## Learn More
+### Publications
+This page lists major papers with:
+- publication titles
+- plain-language method summaries
+- external links to publication pages
+- corresponding infographic figures
 
-To learn more about Next.js, take a look at the following resources:
+### Web Applications
+This section links to online applications and tools developed by the team for practical research and translational use.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Intended Audience
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The site is intended for:
+- clinical and translational researchers
+- biostatistics and machine learning collaborators
+- informatics teams
+- external stakeholders seeking a concise overview of CSRP Methods Core outputs
 
-## Deploy on Vercel
+## Access and Navigation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The site is organized through top navigation tabs:
+- Home
+- Aims
+- Data
+- Methodology
+- Publications
+- Applications
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Each page is structured for fast scanning, visual clarity, and direct access to figures, papers, and tools.
