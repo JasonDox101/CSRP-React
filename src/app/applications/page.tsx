@@ -46,7 +46,7 @@ export default function ApplicationsPage() {
       <header className="mb-12 space-y-5">
         <div className="h-1 w-16 rounded-full bg-[var(--harvard-primary-blue)]" />
         <h1 className="text-4xl font-bold tracking-tight text-[var(--harvard-blue)] md:text-5xl">
-          Web Applications
+          Resource
         </h1>
       </header>
 

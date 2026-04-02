@@ -9,7 +9,7 @@ const navItems = [
   { href: "/data", label: "Data" },
   { href: "/methodology", label: "Methodology" },
   { href: "/publications", label: "Publications" },
-  { href: "/applications", label: "Applications" },
+  { href: "/applications", label: "Resource" },
 ];
 
 export default function NavBar() {
