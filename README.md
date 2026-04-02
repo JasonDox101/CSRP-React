@@ -33,7 +33,7 @@ This page lists major papers with:
 - external links to publication pages
 - corresponding infographic figures
 
-### Web Applications
+### Resource
 This section links to online applications and tools developed by the team for practical research and translational use.
 
 ## Intended Audience
@@ -52,7 +52,7 @@ The site is organized through top navigation tabs:
 - Data
 - Methodology
 - Publications
-- Applications
+- Resource
 
 Each page is structured for fast scanning, visual clarity, and direct access to figures, papers, and tools.
 
